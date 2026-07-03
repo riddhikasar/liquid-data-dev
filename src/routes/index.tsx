@@ -2,10 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle, Sparkles, FileText } from "lucide-react";
 import { useEffect, useState } from "react";
 import { TopNav } from "@/components/TopNav";
-import { Orb } from "@/components/Orb";
 import { RecipeCard } from "@/components/RecipeCard";
 import { loadLibrary } from "@/lib/library-store";
 import type { Recipe } from "@/lib/recipe.functions";
+import heroCocktails from "@/assets/hero-cocktails.png";
 
 export const Route = createFileRoute("/")({ component: Index });
 
@@ -43,11 +43,20 @@ function Index() {
           <button className="btn-ghost-pill rounded-full px-6 py-3 font-medium">Watch Demo</button>
         </div>
 
-        {/* Hero orb cluster */}
-        <div className="mt-14 flex items-end gap-4 md:gap-8 animate-fade-up" style={{ animationDelay: "0.25s" }}>
-          <Orb size={140} palette={["#ffd6a5", "#ff8fab", "#c39bff"]} />
-          <Orb size={200} palette={["#ffe27a", "#ff9ec4", "#ff6b8a"]} pulsing />
-          <Orb size={160} palette={["#c6f6d5", "#f6e05e", "#ff8fab"]} />
+        {/* Hero cocktail illustration */}
+        <div className="mt-12 relative w-full max-w-4xl animate-fade-up" style={{ animationDelay: "0.25s" }}>
+          <div className="absolute inset-0 -z-10 blur-3xl opacity-60" style={{
+            background: "radial-gradient(ellipse at 50% 60%, rgba(255,158,196,0.6), transparent 65%), radial-gradient(ellipse at 30% 40%, rgba(255,214,165,0.5), transparent 60%)"
+          }} />
+          <Sparkles className="absolute left-4 top-10 h-6 w-6 text-amber-400/70 animate-float" />
+          <Sparkles className="absolute right-8 top-4 h-5 w-5 text-primary/70 animate-float" style={{ animationDelay: "1s" }} />
+          <img
+            src={heroCocktails}
+            alt="Three illustrated cocktail glasses"
+            width={1600}
+            height={1024}
+            className="w-full h-auto object-contain drop-shadow-[0_30px_60px_rgba(236,72,153,0.25)] animate-float"
+          />
         </div>
       </section>
 
