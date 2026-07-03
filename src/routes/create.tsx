@@ -82,7 +82,7 @@ function Create() {
       <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <TopNav />
         <h1 className="text-4xl md:text-5xl font-bold max-w-2xl">Transforming Your Memory into Liquid Data…</h1>
-        <div className="my-14"><Orb size={320} palette={["#ffd6a5", "#ff8fab", "#c39bff"]} pulsing /></div>
+        <div className="my-14"><Orb size={320} palette={["#ffd6a5", "#ff8fab", "#c39bff"]} liquid /></div>
         <div className="flex items-center gap-6 max-w-2xl text-muted-foreground italic">
           <button onClick={() => setStage("input")} className="h-9 w-9 rounded-full border border-border bg-white flex items-center justify-center" aria-label="Cancel"><X className="h-4 w-4" /></button>
           <p className="flex-1"><span className="text-shimmer">{text}</span></p>
@@ -130,14 +130,15 @@ function Create() {
       <div className="mt-10 inline-flex rounded-full bg-white shadow-sm border border-border p-1">
         <button
           onClick={toggleMic}
-          className={`flex items-center gap-2 rounded-full px-5 py-2.5 font-medium transition ${listening || mode === "voice" ? "btn-primary" : "text-muted-foreground"}`}
-          aria-pressed={listening}
+          className={`flex items-center gap-2 rounded-full px-5 py-2.5 font-medium transition ${mode === "voice" ? "btn-primary" : "text-muted-foreground hover:text-foreground"}`}
+          aria-pressed={mode === "voice"}
         >
           <Mic className="h-4 w-4" /> {listening ? "Listening…" : "Speak"}
         </button>
         <button
           onClick={() => { if (listening) { try { recogRef.current?.stop(); } catch {}; setListening(false); } setMode("text"); }}
-          className={`flex items-center gap-2 rounded-full px-5 py-2.5 font-medium transition ${mode === "text" ? "bg-secondary text-foreground" : "text-muted-foreground"}`}
+          className={`flex items-center gap-2 rounded-full px-5 py-2.5 font-medium transition ${mode === "text" ? "btn-primary" : "text-muted-foreground hover:text-foreground"}`}
+          aria-pressed={mode === "text"}
         >
           <Pencil className="h-4 w-4" /> Type
         </button>
