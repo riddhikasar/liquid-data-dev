@@ -14,20 +14,20 @@ export function RecipeCard({ recipe, index }: { recipe: Recipe; index?: number }
         background: "radial-gradient(ellipse at 70% 20%, rgba(255,255,255,0.5), transparent 60%), radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.25), transparent 60%)"
       }} />
 
-      {/* Full-height drink illustration */}
+      {/* Full-bleed drink illustration — fills card top→bottom, anchored far right */}
       <img
         src={drink}
         alt=""
         loading="lazy"
         aria-hidden="true"
-        className="pointer-events-none select-none absolute inset-y-0 right-[-8%] h-full w-auto object-contain object-right drop-shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-transform duration-700 group-hover:-translate-y-2 group-hover:scale-[1.03] mix-blend-luminosity opacity-95"
+        className="pointer-events-none select-none absolute -top-2 -bottom-2 right-[-22%] h-[calc(100%+16px)] w-auto object-contain object-right drop-shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-transform duration-700 group-hover:-translate-y-2 group-hover:scale-[1.04] mix-blend-luminosity opacity-95"
       />
       <img
         src={drink}
         alt=""
         loading="lazy"
         aria-hidden="true"
-        className="pointer-events-none select-none absolute inset-y-0 right-[-8%] h-full w-auto object-contain object-right opacity-45 transition-transform duration-700 group-hover:-translate-y-2 group-hover:scale-[1.03]"
+        className="pointer-events-none select-none absolute -top-2 -bottom-2 right-[-22%] h-[calc(100%+16px)] w-auto object-contain object-right opacity-55 transition-transform duration-700 group-hover:-translate-y-2 group-hover:scale-[1.04]"
       />
 
       <div className="absolute top-5 right-5 text-white/90 text-xs font-semibold tracking-wider drop-shadow z-10">
