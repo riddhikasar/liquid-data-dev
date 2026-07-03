@@ -87,11 +87,13 @@ function Index() {
         <p className="text-center text-muted-foreground mt-2">
           Each memory translates into a unique recipe. Revisit them later, or create new ones.
         </p>
-        <div className="mt-8 rounded-[32px] bg-white/60 backdrop-blur border border-border p-6 md:p-8 shadow-sm relative">
-          <div className="absolute top-6 right-6 inline-flex items-center gap-1.5 text-xs text-primary bg-white rounded-full px-3 py-1 border border-border">
-            <Sparkles className="h-3 w-3" /> AI Generated
+        <div className="mt-8 rounded-[32px] bg-white/60 backdrop-blur border border-border p-6 md:p-10 shadow-sm relative">
+          <div className="flex justify-end mb-6">
+            <div className="inline-flex items-center gap-1.5 text-xs text-primary bg-white rounded-full px-3 py-1 border border-border">
+              <Sparkles className="h-3 w-3" /> AI Generated
+            </div>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 mt-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {cards.map((r, i) => (
               <div key={r.id} className="animate-fade-up" style={{ animationDelay: `${i * 0.05}s` }}>
                 <RecipeCard recipe={r} index={i} />

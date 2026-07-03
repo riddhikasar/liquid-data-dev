@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { TopNav } from "@/components/TopNav";
 import { getCurrent, saveToLibrary, setCurrent } from "@/lib/library-store";
+import { pickDrinkImage } from "@/lib/drink-image";
 import type { Recipe } from "@/lib/recipe.functions";
 
 export const Route = createFileRoute("/recipe")({ component: RecipePage });
@@ -57,8 +58,15 @@ function RecipePage() {
               <Link to="/create" onClick={() => setCurrent(null)} className="btn-ghost-pill rounded-full px-6 py-3 font-medium">Create Another</Link>
             </div>
           </div>
-          <div className="hidden md:flex items-center justify-center">
-            <div className="text-[13rem] leading-none drop-shadow-2xl animate-float">{recipe.emoji}</div>
+          <div className="hidden md:flex items-center justify-center relative">
+            <div aria-hidden className="absolute inset-0 blur-3xl opacity-60" style={{
+              background: `radial-gradient(circle at 50% 50%, ${c1}, transparent 65%)`
+            }} />
+            <img
+              src={pickDrinkImage(recipe.palette)}
+              alt=""
+              className="relative h-[380px] w-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.25)] animate-float"
+            />
           </div>
         </div>
       </div>
