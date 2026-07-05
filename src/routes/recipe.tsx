@@ -26,7 +26,7 @@ function RecipePage() {
   return (
     <div className="min-h-screen px-6 pt-24 pb-16 max-w-5xl mx-auto">
       <TopNav />
-      <h1 className="text-4xl md:text-5xl font-bold animate-fade-up">Your Memory Has Been Transformed</h1>
+      <h1 className="text-4xl md:text-5xl font-semibold animate-fade-up">Your Memory Has Been Transformed</h1>
 
       <div className="mt-10 relative rounded-[32px] overflow-hidden shadow-[0_20px_80px_-20px_rgba(0,0,0,0.3)] animate-fade-up" style={{ animationDelay: "0.15s", background: bg }}>
         <div className="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none" style={{
@@ -46,7 +46,7 @@ function RecipePage() {
 
         <div className="relative grid md:grid-cols-[1.4fr_1fr] gap-6 p-8 md:p-12 text-slate-900 z-10">
           <div>
-            <h2 className="font-display text-4xl font-bold">{recipe.name}</h2>
+            <h2 className="font-display text-4xl font-semibold">{recipe.name}</h2>
             <p className="mt-3 text-slate-900/80 text-lg max-w-md">{recipe.tagline}</p>
             <p className="mt-6 text-slate-900/90 leading-relaxed max-w-lg">{recipe.description}</p>
 
@@ -79,7 +79,7 @@ function RecipePage() {
         <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 animate-slide-fade px-4">
           <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 text-center relative">
             <button onClick={() => setSaved(false)} className="absolute top-4 right-4 text-muted-foreground hover:text-foreground"><X className="h-5 w-5" /></button>
-            <h3 className="text-2xl font-bold">Saved To Library</h3>
+            <h3 className="text-2xl font-semibold">Saved To Library</h3>
             <p className="mt-2 text-muted-foreground">A recipe of your memory has been added to the collection.</p>
             <div className="mt-6 flex gap-3 justify-center">
               <Link to="/library" className="btn-ghost-pill rounded-full px-5 py-2.5 font-medium">Go to Library</Link>

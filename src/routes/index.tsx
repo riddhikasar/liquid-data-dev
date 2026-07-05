@@ -33,7 +33,7 @@ function Index() {
         <div className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-border px-4 py-1.5 text-xs font-medium text-primary animate-fade-up">
           <Sparkles className="h-3.5 w-3.5" /> Conversational Generative AI
         </div>
-        <h1 className="mt-6 text-6xl md:text-7xl font-bold animate-fade-up" style={{ animationDelay: "0.05s" }}>Liquid Data</h1>
+        <h1 className="mt-6 text-6xl md:text-7xl font-semibold animate-fade-up" style={{ animationDelay: "0.05s" }}>Liquid Data</h1>
         <p className="mt-3 text-muted-foreground max-w-md animate-fade-up" style={{ animationDelay: "0.1s" }}>
           Turning memories into tangible experiences.
         </p>
@@ -63,7 +63,7 @@ function Index() {
 
       {/* HOW IT WORKS */}
       <section className="px-6 max-w-5xl mx-auto pt-8">
-        <h2 className="text-4xl font-bold text-center">How it Works</h2>
+        <h2 className="text-4xl font-semibold text-center">How it Works</h2>
         <p className="text-center text-muted-foreground mt-2">Three simple steps to making memories tangible</p>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {[
@@ -75,7 +75,7 @@ function Index() {
               <div className="h-11 w-11 rounded-xl flex items-center justify-center text-white" style={{ background: s.color }}>
                 <s.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-xl font-semibold">{s.title}</h3>
+              <h3 className="mt-4 text-xl font-medium">{s.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.body}</p>
             </div>
           ))}
@@ -84,7 +84,7 @@ function Index() {
 
       {/* MEMORY RECIPES */}
       <section className="px-6 max-w-6xl mx-auto pt-20">
-        <h2 className="text-4xl font-bold text-center">Memory Recipes</h2>
+        <h2 className="text-4xl font-semibold text-center">Memory Recipes</h2>
         <p className="text-center text-muted-foreground mt-2">
           Each memory translates into a unique recipe. Revisit them later, or create new ones.
         </p>

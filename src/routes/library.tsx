@@ -14,7 +14,7 @@ function Library() {
   return (
     <div className="min-h-screen px-6 pt-24 pb-16 max-w-6xl mx-auto">
       <TopNav />
-      <h1 className="text-4xl md:text-5xl font-bold">Your Library</h1>
+      <h1 className="text-4xl md:text-5xl font-semibold">Your Library</h1>
       <p className="text-muted-foreground mt-2">Every memory you've turned into a drink.</p>
 
       {list.length === 0 ? (
