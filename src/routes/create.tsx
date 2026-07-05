@@ -27,7 +27,7 @@ function Create() {
   const navigate = useNavigate();
   const runRecipe = useServerFn(generateRecipe);
   const [stage, setStage] = useState<Stage>("input");
-  const [mode, setMode] = useState<"voice" | "text">("voice");
+  const [mode, setMode] = useState<"voice" | "text">("text");
   const [text, setText] = useState("");
   const [listening, setListening] = useState(false);
   const [err, setErr] = useState<string | null>(null);
@@ -97,26 +97,33 @@ function Create() {
       <TopNav />
       <h1 className="text-4xl md:text-5xl font-bold text-center max-w-2xl">Which Memory Do You Want To Experience?</h1>
 
-      <div className="my-10"><Orb size={300} palette={["#ffd6a5", "#ff6b8a", "#c39bff"]} pulsing={listening} /></div>
+      <div className="my-8"><Orb size={220} palette={["#ffb3d9", "#c39bff", "#8ec5ff"]} pulsing={listening} /></div>
 
-      <div className="w-full max-w-3xl flex items-start gap-4">
-        <button onClick={() => setText("")} className="h-9 w-9 rounded-full border border-border bg-white flex items-center justify-center text-muted-foreground hover:text-foreground shrink-0" aria-label="Reset">
+      <div className="w-full max-w-3xl flex items-center gap-3">
+        <button onClick={() => setText("")} className="h-10 w-10 rounded-full border border-border bg-white flex items-center justify-center text-muted-foreground hover:text-foreground shrink-0" aria-label="Reset">
           <RotateCcw className="h-4 w-4" />
         </button>
-        {mode === "text" || !recogRef.current ? (
-          <textarea
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            placeholder="Describe a memory you'd like to taste… It could be a moment of joy, nostalgia, or any feeling you want to relive."
-            className="flex-1 min-h-[80px] resize-none bg-transparent text-lg placeholder:text-muted-foreground/70 focus:outline-none"
-          />
-        ) : (
-          <p className="flex-1 text-lg min-h-[80px]">
-            {text || <span className="text-muted-foreground/70">Describe a memory you'd like to taste… It could be a moment of joy, nostalgia, or any feeling you want to relive.</span>}
-          </p>
-        )}
-        <button onClick={submit} className="h-10 w-10 rounded-full flex items-center justify-center text-primary hover:bg-primary/10 shrink-0" aria-label="Submit">
-          <ArrowRight className="h-5 w-5" />
+        <div className="flex-1 relative rounded-2xl border border-border bg-white/90 shadow-sm focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition">
+          {mode === "text" || !recogRef.current ? (
+            <textarea
+              autoFocus
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              placeholder="Describe a memory you'd like to taste… A moment of joy, nostalgia, or a feeling you want to relive."
+              className="w-full min-h-[110px] resize-none bg-transparent text-base md:text-lg placeholder:text-muted-foreground/60 px-5 py-4 rounded-2xl focus:outline-none caret-primary animate-caret-blink"
+            />
+          ) : (
+            <p className="min-h-[110px] text-base md:text-lg px-5 py-4">
+              {text || <span className="text-muted-foreground/60">Listening… speak a memory you'd like to taste.</span>}
+            </p>
+          )}
+        </div>
+        <button
+          onClick={submit}
+          className="btn-primary h-14 w-14 rounded-full flex items-center justify-center shrink-0"
+          aria-label="Submit memory"
+        >
+          <ArrowRight className="h-6 w-6" />
         </button>
       </div>
 
@@ -129,20 +136,21 @@ function Create() {
 
       <div className="mt-10 inline-flex rounded-full bg-white shadow-sm border border-border p-1">
         <button
-          onClick={toggleMic}
-          className={`flex items-center gap-2 rounded-full px-5 py-2.5 font-medium transition ${mode === "voice" ? "btn-primary" : "text-muted-foreground hover:text-foreground"}`}
-          aria-pressed={mode === "voice"}
-        >
-          <Mic className="h-4 w-4" /> {listening ? "Listening…" : "Speak"}
-        </button>
-        <button
           onClick={() => { if (listening) { try { recogRef.current?.stop(); } catch {}; setListening(false); } setMode("text"); }}
           className={`flex items-center gap-2 rounded-full px-5 py-2.5 font-medium transition ${mode === "text" ? "btn-primary" : "text-muted-foreground hover:text-foreground"}`}
           aria-pressed={mode === "text"}
         >
           <Pencil className="h-4 w-4" /> Type
         </button>
+        <button
+          onClick={toggleMic}
+          className={`flex items-center gap-2 rounded-full px-5 py-2.5 font-medium transition ${mode === "voice" ? "btn-primary" : "text-muted-foreground hover:text-foreground"}`}
+          aria-pressed={mode === "voice"}
+        >
+          <Mic className="h-4 w-4" /> {listening ? "Listening…" : "Speak"}
+        </button>
       </div>
     </div>
   );
 }
+
