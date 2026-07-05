@@ -85,8 +85,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Liquid Data — Turn memories into tangible experiences" },
       { name: "twitter:description", content: "Describe a memory and Liquid Data crafts a unique drink recipe that captures its essence." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4d302b98-87b2-4ffa-a83e-05154fb8f80e" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4d302b98-87b2-4ffa-a83e-05154fb8f80e" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/CUBjvOjBq9QTjypoYxJXeXoDP0e2/social-images/social-1783286251454-Screenshot_2026-07-05_at_1.02.17_PM.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/CUBjvOjBq9QTjypoYxJXeXoDP0e2/social-images/social-1783286251454-Screenshot_2026-07-05_at_1.02.17_PM.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
