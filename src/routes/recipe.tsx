@@ -29,24 +29,36 @@ function RecipePage() {
       <h1 className="text-4xl md:text-5xl font-bold animate-fade-up">Your Memory Has Been Transformed</h1>
 
       <div className="mt-10 relative rounded-[32px] overflow-hidden shadow-[0_20px_80px_-20px_rgba(0,0,0,0.3)] animate-fade-up" style={{ animationDelay: "0.15s", background: bg }}>
-        <div className="absolute inset-0 opacity-40 mix-blend-overlay" style={{
+        <div className="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none" style={{
           background: "radial-gradient(ellipse at 75% 25%, rgba(255,255,255,0.5), transparent 60%), radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.2), transparent 60%)"
         }} />
-        <div className="relative grid md:grid-cols-[1.4fr_1fr] gap-6 p-8 md:p-12 text-white">
+
+        {/* Oversized drink illustration, bleeds off the right edge */}
+        <img
+          src={pickDrinkImage(recipe.palette)}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute -top-[10%] -bottom-[10%] right-[-14%] h-[120%] w-auto object-contain object-right drop-shadow-[0_25px_50px_rgba(0,0,0,0.25)] animate-float z-0"
+        />
+        <div aria-hidden className="absolute right-0 top-0 bottom-0 w-[55%] blur-3xl opacity-60 pointer-events-none" style={{
+          background: `radial-gradient(circle at 60% 50%, ${c1}, transparent 65%)`
+        }} />
+
+        <div className="relative grid md:grid-cols-[1.4fr_1fr] gap-6 p-8 md:p-12 text-slate-900 z-10">
           <div>
-            <h2 className="font-display text-4xl font-bold drop-shadow">{recipe.name}</h2>
-            <p className="mt-3 text-white/90 text-lg max-w-md">{recipe.tagline}</p>
-            <p className="mt-6 text-white/95 leading-relaxed max-w-lg">{recipe.description}</p>
+            <h2 className="font-display text-4xl font-bold">{recipe.name}</h2>
+            <p className="mt-3 text-slate-900/80 text-lg max-w-md">{recipe.tagline}</p>
+            <p className="mt-6 text-slate-900/90 leading-relaxed max-w-lg">{recipe.description}</p>
 
             {recipe.ingredients.length > 0 && (
-              <ul className="mt-6 flex flex-wrap gap-2">
+              <ul className="mt-6 flex flex-wrap gap-2 max-w-lg">
                 {recipe.ingredients.map((ing) => (
-                  <li key={ing} className="text-xs px-3 py-1.5 rounded-full bg-white/25 backdrop-blur text-white/95 border border-white/30">{ing}</li>
+                  <li key={ing} className="text-xs px-3 py-1.5 rounded-full bg-white/40 backdrop-blur text-slate-900/90 border border-white/50">{ing}</li>
                 ))}
               </ul>
             )}
 
-            <blockquote className="mt-8 italic text-white/90 max-w-lg border-l-2 border-white/40 pl-4">
+            <blockquote className="mt-8 italic text-slate-900/80 max-w-lg border-l-2 border-slate-900/30 pl-4">
               "{recipe.memory}"
             </blockquote>
 
@@ -58,18 +70,10 @@ function RecipePage() {
               <Link to="/create" onClick={() => setCurrent(null)} className="btn-ghost-pill rounded-full px-6 py-3 font-medium">Create Another</Link>
             </div>
           </div>
-          <div className="hidden md:flex items-center justify-center relative">
-            <div aria-hidden className="absolute inset-0 blur-3xl opacity-60" style={{
-              background: `radial-gradient(circle at 50% 50%, ${c1}, transparent 65%)`
-            }} />
-            <img
-              src={pickDrinkImage(recipe.palette)}
-              alt=""
-              className="relative h-[380px] w-auto object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.25)] animate-float"
-            />
-          </div>
+          <div />
         </div>
       </div>
+
 
       {saved && (
         <div className="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50 animate-slide-fade px-4">
