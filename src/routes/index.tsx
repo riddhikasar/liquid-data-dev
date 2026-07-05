@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { TopNav } from "@/components/TopNav";
 import { RecipeCard } from "@/components/RecipeCard";
 import { loadLibrary } from "@/lib/library-store";
+import { WatchDemoButton } from "@/components/DemoVideoDialog";
 import type { Recipe } from "@/lib/recipe.functions";
 import heroCocktails from "@/assets/hero-cocktails.png";
 
