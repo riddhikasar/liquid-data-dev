@@ -152,6 +152,29 @@
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
+@keyframes liquid-wave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100px); }
+}
+@keyframes liquid-wave-2 {
+  0% { transform: translateX(-100px); }
+  100% { transform: translateX(0); }
+}
+@keyframes liquid-fill {
+  0%   { y: 165px; height: 0px; }
+  60%  { y: 55px; height: 110px; }
+  75%  { y: 60px; height: 105px; }
+  100% { y: 55px; height: 110px; }
+}
+@keyframes bubble-rise {
+  0%   { transform: translateY(0); opacity: 0; }
+  20%  { opacity: 0.85; }
+  100% { transform: translateY(-90px); opacity: 0; }
+}
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0.6); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
 
 @utility animate-float { animation: float-orb 6s ease-in-out infinite; }
 @utility animate-orb-pulse { animation: orb-pulse 2.4s ease-in-out infinite; }
@@ -159,8 +182,14 @@
 @utility animate-orb-glow { animation: orb-glow 4s ease-in-out infinite; }
 @utility animate-liquid-swirl { animation: liquid-swirl 8s linear infinite; }
 @utility animate-liquid-rise { animation: liquid-rise 3.5s ease-in-out infinite; }
+@utility animate-liquid-wave { animation: liquid-wave 4s linear infinite; }
+@utility animate-liquid-wave-2 { animation: liquid-wave-2 5.5s linear infinite; }
+@utility animate-liquid-fill { animation: liquid-fill 3s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@utility animate-bubble { animation: bubble-rise 2.4s ease-in infinite; }
+@utility animate-sparkle { animation: sparkle 2.2s ease-in-out infinite; }
 @utility animate-fade-up { animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
 @utility animate-slide-fade { animation: slide-fade 0.4s ease-out both; }
+
 
 
 @utility text-shimmer {
