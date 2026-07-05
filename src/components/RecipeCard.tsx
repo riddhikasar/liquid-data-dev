@@ -39,12 +39,12 @@ export function RecipeCard({ recipe, index }: { recipe: Recipe; index?: number }
         className="pointer-events-none select-none absolute -top-[10%] -bottom-[10%] right-[-30%] h-[120%] w-auto object-contain object-right drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)] transition-transform duration-700 group-hover:-translate-y-2 group-hover:scale-[1.04]"
       />
 
-      <div className={`absolute top-5 right-5 text-xs font-semibold tracking-wider z-10 ${badge}`}>
+      <div className={`absolute top-5 right-5 text-xs font-medium tracking-wider z-10 ${badge}`}>
         {typeof index === "number" ? `#${String(index + 1).padStart(2, "0")}` : ""}
       </div>
       <div className={`relative flex flex-col h-full justify-between p-6 z-10 ${textMain}`}>
         <div>
-          <h3 className="font-display text-2xl font-bold max-w-[58%]">{recipe.name}</h3>
+          <h3 className="font-display text-2xl font-semibold max-w-[58%]">{recipe.name}</h3>
           <p className={`text-sm mt-1 italic max-w-[55%] ${textSoft}`}>{recipe.tagline}</p>
         </div>
         <p className={`text-sm max-w-[55%] leading-snug ${textBody}`}>

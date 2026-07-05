@@ -81,7 +81,7 @@ function Create() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <TopNav />
-        <h1 className="text-4xl md:text-5xl font-bold max-w-2xl">Transforming Your Memory into Liquid Data…</h1>
+        <h1 className="text-4xl md:text-5xl font-semibold max-w-2xl">Transforming Your Memory into Liquid Data…</h1>
         <div className="my-14"><Orb size={240} palette={["#ffb3d9", "#c39bff", "#8ec5ff"]} liquid /></div>
         <div className="flex items-center gap-6 max-w-2xl text-muted-foreground italic">
           <button onClick={() => setStage("input")} className="h-9 w-9 rounded-full border border-border bg-white flex items-center justify-center" aria-label="Cancel"><X className="h-4 w-4" /></button>
@@ -95,7 +95,7 @@ function Create() {
   return (
     <div className="min-h-screen flex flex-col items-center px-6 pt-20 pb-16">
       <TopNav />
-      <h1 className="text-4xl md:text-5xl font-bold text-center max-w-2xl">Which Memory Do You Want To Experience?</h1>
+      <h1 className="text-4xl md:text-5xl font-semibold text-center max-w-2xl">Which Memory Do You Want To Experience?</h1>
 
       <div className="my-14"><Orb size={200} palette={["#ffb3d9", "#c39bff", "#8ec5ff"]} pulsing={listening} /></div>
 
