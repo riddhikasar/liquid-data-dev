@@ -82,7 +82,7 @@ function Create() {
       <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <TopNav />
         <h1 className="text-4xl md:text-5xl font-bold max-w-2xl">Transforming Your Memory into Liquid Data…</h1>
-        <div className="my-14"><Orb size={320} palette={["#ffd6a5", "#ff8fab", "#c39bff"]} liquid /></div>
+        <div className="my-14"><Orb size={240} palette={["#ffb3d9", "#c39bff", "#8ec5ff"]} liquid /></div>
         <div className="flex items-center gap-6 max-w-2xl text-muted-foreground italic">
           <button onClick={() => setStage("input")} className="h-9 w-9 rounded-full border border-border bg-white flex items-center justify-center" aria-label="Cancel"><X className="h-4 w-4" /></button>
           <p className="flex-1"><span className="text-shimmer">{text}</span></p>
