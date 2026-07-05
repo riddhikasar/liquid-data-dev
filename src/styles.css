@@ -189,6 +189,8 @@
 @utility animate-sparkle { animation: sparkle 2.2s ease-in-out infinite; }
 @utility animate-fade-up { animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; }
 @utility animate-slide-fade { animation: slide-fade 0.4s ease-out both; }
+@keyframes orb-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@utility animate-orb-spin { animation: orb-spin 6s linear infinite; transform-origin: 50% 50%; }
 
 
 

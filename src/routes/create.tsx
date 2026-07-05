@@ -97,11 +97,11 @@ function Create() {
       <TopNav />
       <h1 className="text-4xl md:text-5xl font-bold text-center max-w-2xl">Which Memory Do You Want To Experience?</h1>
 
-      <div className="my-8"><Orb size={220} palette={["#ffb3d9", "#c39bff", "#8ec5ff"]} pulsing={listening} /></div>
+      <div className="my-14"><Orb size={200} palette={["#ffb3d9", "#c39bff", "#8ec5ff"]} pulsing={listening} /></div>
 
-      <div className="w-full max-w-3xl flex items-center gap-3">
-        <button onClick={() => setText("")} className="h-10 w-10 rounded-full border border-border bg-white flex items-center justify-center text-muted-foreground hover:text-foreground shrink-0" aria-label="Reset">
-          <RotateCcw className="h-4 w-4" />
+      <div className="w-full max-w-3xl flex items-center gap-6">
+        <button onClick={() => setText("")} className="h-14 w-14 rounded-full border border-border bg-white flex items-center justify-center text-muted-foreground hover:text-foreground shrink-0" aria-label="Reset">
+          <RotateCcw className="h-5 w-5" />
         </button>
         <div className="flex-1 relative rounded-2xl border border-border bg-white/90 shadow-sm focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition">
           {mode === "text" || !recogRef.current ? (
@@ -110,7 +110,7 @@ function Create() {
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder="Describe a memory you'd like to taste… A moment of joy, nostalgia, or a feeling you want to relive."
-              className="w-full min-h-[110px] resize-none bg-transparent text-base md:text-lg placeholder:text-muted-foreground/60 px-5 py-4 rounded-2xl focus:outline-none caret-primary animate-caret-blink"
+              className="w-full min-h-[110px] resize-none bg-transparent text-base md:text-lg placeholder:text-muted-foreground/60 px-5 py-4 rounded-2xl focus:outline-none"
             />
           ) : (
             <p className="min-h-[110px] text-base md:text-lg px-5 py-4">
@@ -126,6 +126,7 @@ function Create() {
           <ArrowRight className="h-6 w-6" />
         </button>
       </div>
+
 
       {err && (
         <div className="mt-6 flex items-center gap-3 px-5 py-3 rounded-full border border-primary/40 text-primary bg-white animate-slide-fade">
