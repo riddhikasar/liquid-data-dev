@@ -41,7 +41,7 @@ function Index() {
           <Link to="/create" className="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium">
             Start Your Journey <ArrowRight className="h-4 w-4" />
           </Link>
-          <button className="btn-ghost-pill rounded-full px-6 py-3 font-medium">Watch Demo</button>
+          <WatchDemoButton className="btn-ghost-pill inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium" />
         </div>
 
         {/* Hero cocktail illustration */}
@@ -107,7 +107,7 @@ function Index() {
           <Link to="/create" className="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium">
             Taste your memories <ArrowRight className="h-4 w-4" />
           </Link>
-          <button className="btn-ghost-pill rounded-full px-6 py-3 font-medium">Watch Demo</button>
+          <WatchDemoButton className="btn-ghost-pill inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium" />
         </div>
       </section>
     </div>
