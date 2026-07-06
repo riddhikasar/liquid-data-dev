@@ -37,7 +37,7 @@ export function WatchDemoButton({ className }: { className?: string }) {
   return (
     <DemoVideoDialog>
       <button className={className}>
-        <Play className="h-4 w-4" /> Watch Demo
+        <Play className="h-5 w-5" /> Watch Demo
       </button>
     </DemoVideoDialog>
   );
