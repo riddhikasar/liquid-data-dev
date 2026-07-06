@@ -38,10 +38,10 @@ function Index() {
           Turning memories into tangible experiences.
         </p>
         <div className="mt-8 flex items-center gap-3 animate-fade-up" style={{ animationDelay: "0.15s" }}>
-          <Link to="/create" className="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium">
-            Start Your Journey <ArrowRight className="h-4 w-4" />
+          <Link to="/create" className="btn-primary inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3 font-medium text-center">
+            Start Your Journey <ArrowRight className="h-5 w-5" />
           </Link>
-          <WatchDemoButton className="btn-ghost-pill inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium" />
+          <WatchDemoButton className="btn-ghost-pill inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3 font-medium text-center" />
         </div>
 
         {/* Hero cocktail illustration */}
@@ -104,10 +104,10 @@ function Index() {
         </div>
 
         <div className="mt-14 flex justify-center gap-3">
-          <Link to="/create" className="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium">
-            Taste your memories <ArrowRight className="h-4 w-4" />
+          <Link to="/create" className="btn-primary inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3 font-medium text-center">
+            Taste your memories <ArrowRight className="h-5 w-5" />
           </Link>
-          <WatchDemoButton className="btn-ghost-pill inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium" />
+          <WatchDemoButton className="btn-ghost-pill inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3 font-medium text-center" />
         </div>
       </section>
     </div>
