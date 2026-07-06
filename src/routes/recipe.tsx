@@ -26,7 +26,7 @@ function RecipePage() {
   return (
     <div className="min-h-screen px-6 pt-24 pb-16 max-w-5xl mx-auto">
       <TopNav />
-      <h1 className="text-4xl md:text-5xl font-semibold animate-fade-up">Your Memory Has Been Transformed</h1>
+      <h1 className="text-4xl md:text-5xl font-semibold text-center animate-fade-up">Your Memory Has Been Transformed</h1>
 
       <div className="mt-10 relative rounded-[32px] overflow-hidden shadow-[0_20px_80px_-20px_rgba(0,0,0,0.3)] animate-fade-up" style={{ animationDelay: "0.15s", background: bg }}>
         <div className="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none" style={{
