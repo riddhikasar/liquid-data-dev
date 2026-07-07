@@ -94,8 +94,8 @@ function Create() {
 
   return (
     <div className="min-h-screen flex flex-col items-center px-6 pt-20 pb-16">
-      <TopNav />
       <h1 className="text-4xl md:text-5xl font-semibold text-center max-w-2xl">Which Memory Do You Want To Experience?</h1>
+
 
       <div className="my-14"><Orb size={200} palette={["#ffb3d9", "#c39bff", "#8ec5ff"]} pulsing={listening} /></div>
 
