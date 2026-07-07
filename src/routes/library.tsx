@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { TopNav } from "@/components/TopNav";
 import { RecipeCard } from "@/components/RecipeCard";
 import { loadLibrary } from "@/lib/library-store";
 import type { Recipe } from "@/lib/recipe.functions";
+
 
 export const Route = createFileRoute("/library")({ component: Library });
 
@@ -13,8 +13,8 @@ function Library() {
 
   return (
     <div className="min-h-screen px-6 pt-24 pb-16 max-w-6xl mx-auto">
-      <TopNav />
       <h1 className="text-4xl md:text-5xl font-semibold text-center">Your Library</h1>
+
       <p className="text-muted-foreground mt-2 text-center">Every memory you've turned into a drink.</p>
 
       {list.length === 0 ? (
