@@ -33,7 +33,7 @@ function Index() {
         <div className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-border px-4 py-1.5 text-xs font-medium text-primary animate-fade-up">
           <Sparkles className="h-3.5 w-3.5" /> Conversational Generative AI
         </div>
-        <h1 className="mt-6 text-6xl md:text-7xl font-semibold animate-fade-up" style={{ animationDelay: "0.05s" }}>Liquid Data</h1>
+        <h1 className="mt-6 text-6xl md:text-7xl font-semibold animate-fade-up" style={{ animationDelay: "0.05s" }}>Liquid Data — Turn your memories into unique cocktails</h1>
         <p className="mt-3 text-muted-foreground max-w-md animate-fade-up" style={{ animationDelay: "0.1s" }}>
           Turning memories into tangible experiences.
         </p>
