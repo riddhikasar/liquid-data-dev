@@ -26,9 +26,8 @@ function Index() {
 
   return (
     <div className="min-h-screen pb-24">
-      <TopNav />
-
       {/* HERO */}
+
       <section className="pt-24 pb-16 px-6 flex flex-col items-center text-center">
         <div className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-border px-4 py-1.5 text-xs font-medium text-primary animate-fade-up">
           <Sparkles className="h-3.5 w-3.5" /> Conversational Generative AI
