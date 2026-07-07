@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RecipeRouteImport } from './routes/recipe'
 import { Route as LibraryRouteImport } from './routes/library'
 import { Route as CreateRouteImport } from './routes/create'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RecipeRoute = RecipeRouteImport.update({
   id: '/recipe',
   path: '/recipe',
@@ -40,12 +46,14 @@ export interface FileRoutesByFullPath {
   '/create': typeof CreateRoute
   '/library': typeof LibraryRoute
   '/recipe': typeof RecipeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/create': typeof CreateRoute
   '/library': typeof LibraryRoute
   '/recipe': typeof RecipeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,14 @@ export interface FileRoutesById {
   '/create': typeof CreateRoute
   '/library': typeof LibraryRoute
   '/recipe': typeof RecipeRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/create' | '/library' | '/recipe'
+  fullPaths: '/' | '/create' | '/library' | '/recipe' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/create' | '/library' | '/recipe'
-  id: '__root__' | '/' | '/create' | '/library' | '/recipe'
+  to: '/' | '/create' | '/library' | '/recipe' | '/sitemap.xml'
+  id: '__root__' | '/' | '/create' | '/library' | '/recipe' | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,10 +76,18 @@ export interface RootRouteChildren {
   CreateRoute: typeof CreateRoute
   LibraryRoute: typeof LibraryRoute
   RecipeRoute: typeof RecipeRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/recipe': {
       id: '/recipe'
       path: '/recipe'
@@ -107,17 +124,8 @@ const rootRouteChildren: RootRouteChildren = {
   CreateRoute: CreateRoute,
   LibraryRoute: LibraryRoute,
   RecipeRoute: RecipeRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
