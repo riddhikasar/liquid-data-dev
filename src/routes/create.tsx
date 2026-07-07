@@ -2,10 +2,10 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Mic, Pencil, RotateCcw, AlertTriangle, X } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
-import { TopNav } from "@/components/TopNav";
 import { Orb } from "@/components/Orb";
 import { generateRecipe } from "@/lib/recipe.functions";
 import { setCurrent } from "@/lib/library-store";
+
 
 export const Route = createFileRoute("/create")({ component: Create });
 
